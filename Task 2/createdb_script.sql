@@ -1,14 +1,8 @@
--- ============================================
--- 1. DATABASE
--- ============================================
-
 DROP DATABASE IF EXISTS cinema_management;
 CREATE DATABASE cinema_management;
 USE cinema_management;
 
--- ============================================
--- 2. TABLES
--- ============================================
+
 
 CREATE TABLE movies (
     movie_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -153,9 +147,7 @@ CREATE TABLE reservations (
         ON DELETE CASCADE
 );
 
--- ============================================
--- 3. SAMPLE DATA (20+ rows)
--- ============================================
+
 
 INSERT INTO movies (title, genre, duration_minutes, release_date, rating)
 VALUES 
@@ -216,9 +208,7 @@ VALUES
 (1,1),
 (2,2);
 
--- ============================================
--- 4. ADD record_ts (REQUIRED)
--- ============================================
+
 
 ALTER TABLE theaters ADD record_ts DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL;
 ALTER TABLE halls ADD record_ts DATETIME DEFAULT CURRENT_TIMESTAMP NOT NULL;
@@ -236,6 +226,3 @@ ALTER TABLE reservations ADD record_ts DATETIME DEFAULT CURRENT_TIMESTAMP NOT NU
 SHOW TABLES;
 DESCRIBE movies;
 
--- ============================================
--- DONE ✅
--- ============================================
